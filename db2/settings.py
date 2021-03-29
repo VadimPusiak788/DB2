@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import config
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,7 +34,7 @@ STATICFILES_DIRS = (
 SECRET_KEY = 'j-z(o(g*itg^nhjvzyl9s)labuv=qda%wei3e0d*s@_lp7ja%1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = False
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
