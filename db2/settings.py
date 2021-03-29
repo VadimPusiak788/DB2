@@ -35,8 +35,7 @@ SECRET_KEY = 'j-z(o(g*itg^nhjvzyl9s)labuv=qda%wei3e0d*s@_lp7ja%1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-db_from_env = dj_database_url.config()
-DATABASE['default'].update(db_from_env)
+
 ALLOWED_HOSTS = ['*']
 
 
@@ -136,3 +135,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
