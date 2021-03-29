@@ -23,8 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'j-z(o(g*itg^nhjvzyl9s)labuv=qda%wei3e0d*s@_lp7ja%1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+DEBUG = config('DEBUG', default=False, cast=bool)
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 ALLOWED_HOSTS = ['*']
 
 
