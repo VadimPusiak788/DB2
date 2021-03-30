@@ -36,7 +36,7 @@ SECRET_KEY = 'j-z(o(g*itg^nhjvzyl9s)labuv=qda%wei3e0d*s@_lp7ja%1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'db2demotest.herokuapp.com']
 
 
 # Application definition
@@ -135,5 +135,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
