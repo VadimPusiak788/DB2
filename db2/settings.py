@@ -27,7 +27,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j-z(o(g*itg^nhjvzyl9s)labuv=qda%wei3e0d*s@_lp7ja%1'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -84,16 +84,16 @@ WSGI_APPLICATION = 'db2.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'django_db',
-#         'USER': 'vadim',
-#         'PASSWORD': '426879',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django_db',
+        'USER': 'vadim',
+        'PASSWORD': '426879',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation
